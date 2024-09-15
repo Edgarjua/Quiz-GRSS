@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz sobre Gerenciamento de Resíduos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="quiz-container">
+        <div id="welcome-message"></div>
+        <div id="question-container">
+            <p id="question"></p>
+            <button class="answer-btn" id="btn-a" onclick="selectAnswer('A')"></button>
+            <button class="answer-btn" id="btn-b" onclick="selectAnswer('B')"></button>
+        </div>
+        <div id="score-container" style="display: none;">
+            <p id="score"></p>
+            <button id="restart-btn" onclick="restartQuiz()">Reiniciar Quiz</button>
+            <button id="end-quiz-btn" onclick="endQuiz()">Finalizar Quiz</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const userName = localStorage.getItem('userName');
+            if (userName) {
+                document.getElementById('welcome-message').innerText = `Bem-vindo, ${userName}!`;
+                localStorage.removeItem('userName');
+            }
+            showQuestion();
+        });
+    </script>
+</body>
+</html>

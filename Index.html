@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Gerenciamento de Resíduos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="start-container">
+        <h1>Quiz Gerenciamento de Resíduos</h1>
+        <label for="name">Digite seu nome:</label>
+        <input type="text" id="name" placeholder="Seu nome">
+        <button onclick="startQuiz()">Iniciar Quiz</button>
+    </div>
+    <script>
+        function startQuiz() {
+            const name = document.getElementById('name').value.trim();
+            if (name) {
+                localStorage.setItem('userName', name);
+                window.location.href = 'quiz.html';
+            } else {
+                alert('Por favor, insira seu nome.');
+            }
+        }
+    </script>
+</body>
+</html>
+      
